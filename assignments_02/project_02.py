@@ -147,7 +147,7 @@ print("R2 : ", model.score(X_test, y_test))
 
 # features used for prediction
 feature_cols = ["failures", "Medu", "Fedu", "studytime", "higher", "schoolsup",
-                "internet", "sex", "freetime", "activities", "traveltime", "G1"]
+                "internet", "sex", "freetime", "activities", "traveltime"]
 X1 = data_clean[feature_cols].values
 y1 = data_clean["G3"].values
 
@@ -221,6 +221,27 @@ Summarize:
 
 
 # --- Neglected Feature: The Power of G1 ---
+
+# features used for prediction
+feature_cols_g1 = ["failures", "Medu", "Fedu", "studytime", "higher", "schoolsup",
+                "internet", "sex", "freetime", "activities", "traveltime", "G1"]
+X2 = data_clean[feature_cols_g1].values
+y2 = data_clean["G3"].values
+
+# train/test split(80/20)
+X_train2, X_test2, y_train2, y_test2 = train_test_split(X2, y2, test_size=0.2, random_state=42)
+
+# create and train linear regression model
+model_2 = LinearRegression()
+model_2.fit(X_train2, y_train2)
+
+# make predictions on test set
+y_pred2 = model_2.predict(X_test2)
+
+# model performance (R2)
+print("R2 with G1 (test): ", model_2.score(X_test2, y_test2))
+print("R2 with G1 (train): ", model_2.score(X_train2, y_train2))
+
 
 """
 A high R2 does not mean G1 causes G3, it only shows theay are strongly related.

@@ -143,7 +143,7 @@ print("R2 : ", model.score(X_test, y_test))
 
 
 
-# --- Task 5: Build the Full Mode ---
+# --- Task 5: Build the Full Model (WiTHOUT G1) ---
 
 # features used for prediction
 feature_cols = ["failures", "Medu", "Fedu", "studytime", "higher", "schoolsup",
@@ -155,18 +155,18 @@ y1 = data_clean["G3"].values
 X_train1, X_test1, y_train1, y_test1 = train_test_split(X1, y1, test_size=0.2, random_state=42)
 
 # create and train linear regression model
-model_1 = LinearRegression()
-model_1.fit(X_train1, y_train1)
+model_no_g1 = LinearRegression()
+model_no_g1.fit(X_train1, y_train1)
 
 # make predictions on test set
-y_pred1 = model_1.predict(X_test1)
+y_pred1 = model_no_g1.predict(X_test1)
 
 # model performance (R2)
-print("R2 of test set: ", model_1.score(X_test1, y_test1))
-print("R2 of train set: ", model_1.score(X_train1, y_train1))
+print("R2 without G1 of test set: ", model_no_g1.score(X_test1, y_test1))
+print("R2 without G1 of train set: ", model_no_g1.score(X_train1, y_train1))
 
 # show feature importance (coefficients)
-for name, coef in zip(feature_cols, model_1.coef_):
+for name, coef in zip(feature_cols, model_no_g1.coef_):
     print(f"{name:12s}: {coef:+.3f}")
 
 # Schoolsup is negatively correlated, likely because it is given to weaker students, not because it lowers grades.
@@ -232,15 +232,15 @@ y2 = data_clean["G3"].values
 X_train2, X_test2, y_train2, y_test2 = train_test_split(X2, y2, test_size=0.2, random_state=42)
 
 # create and train linear regression model
-model_2 = LinearRegression()
-model_2.fit(X_train2, y_train2)
+model_with_g1 = LinearRegression()
+model_with_g1.fit(X_train2, y_train2)
 
 # make predictions on test set
-y_pred2 = model_2.predict(X_test2)
+y_pred2 = model_with_g1.predict(X_test2)
 
 # model performance (R2)
-print("R2 with G1 (test): ", model_2.score(X_test2, y_test2))
-print("R2 with G1 (train): ", model_2.score(X_train2, y_train2))
+print("R2 without G1: ", model_no_g1.score(X_test1, y_test1))
+print("R2 with G1: ", model_with_g1.score(X_test2, y_test2))
 
 
 """

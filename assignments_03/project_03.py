@@ -16,6 +16,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import ConfusionMatrixDisplay
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import (
     confusion_matrix,
@@ -262,6 +263,11 @@ rf_preds = rf.predict(X_test)
 print("Random Forest Accuracy:", accuracy_score(y_test, rf_preds))
 print(classification_report(y_test, rf_preds))
 
+ConfusionMatrixDisplay.from_estimator(rf, X_test, y_test)
+plt.title("Random Forest Confusion Matrix")
+plt.savefig("outputs/best_model_confusion_matrix.png")
+plt.show()
+
 # Feature importance comparison
 
 # Importance from Decision Tree and Random Forest
@@ -291,7 +297,7 @@ print("\nRandom Forest Top 10:", rf_df.head(10))
 # Logistic Regression
 
 # With scaled data
-log_reg_scaled = LogisticRegression(C=1.0, max_iter=1000, solver='liblinear')
+log_reg_scaled = LogisticRegression(C=1.0, max_iter=1000, solver='lbfgs')
 log_reg_scaled.fit(X_train_scaled, y_train)  
 
 pred_log_reg_scaled = log_reg_scaled.predict(X_test_scaled)

@@ -142,8 +142,10 @@ print("R2 : ", model.score(X_test, y_test))
 # and R2 is low(~0.09), meaning failures alone explains very little of the variation in student performance.
 
 
-
+assignments_04
+# --- Task 5: Build the Full Model (WITHOUT G1) ---
 # --- Task 5: Build the Full Model (WiTHOUT G1) ---
+main
 
 # features used for prediction
 feature_cols = ["failures", "Medu", "Fedu", "studytime", "higher", "schoolsup",
@@ -225,6 +227,7 @@ Summarize:
 # features used for prediction
 feature_cols_g1 = ["failures", "Medu", "Fedu", "studytime", "higher", "schoolsup",
                 "internet", "sex", "freetime", "activities", "traveltime", "G1"]
+
 X2 = data_clean[feature_cols_g1].values
 y2 = data_clean["G3"].values
 
@@ -239,7 +242,11 @@ model_with_g1.fit(X_train2, y_train2)
 y_pred2 = model_with_g1.predict(X_test2)
 
 # model performance (R2)
+assignments_04
+print("R2 without G1:", model_no_g1.score(X_test1, y_test1))
+
 print("R2 without G1: ", model_no_g1.score(X_test1, y_test1))
+main
 print("R2 with G1: ", model_with_g1.score(X_test2, y_test2))
 
 

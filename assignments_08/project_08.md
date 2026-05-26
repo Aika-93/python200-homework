@@ -1,6 +1,6 @@
 ----
 
-Azure Portal Walkthrough Video - https://youtu.be/MXjpQULvado
+Azure Portal Walkthrough Video - https://youtu.be/kTu6JLE2j00
 
 
 The Azure Pricing Calculator is useful because it helps estimate costs before creating resources.

@@ -1,3 +1,5 @@
+# ----Video link: https://youtu.be/I3Jgx6Qxrq0 -----
+
 # Project -- Extract + Load Pipeline
 # This script:
 # 1. Extracts weather data from Open-Meteo API

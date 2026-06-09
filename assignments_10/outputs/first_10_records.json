@@ -1,0 +1,62 @@
+[
+  {
+    "time": "2026-06-08T00:00",
+    "temperature_2m": 25.2,
+    "precipitation": 0.0,
+    "conditions": "good"
+  },
+  {
+    "time": "2026-06-08T01:00",
+    "temperature_2m": 23.3,
+    "precipitation": 0.0,
+    "conditions": "good"
+  },
+  {
+    "time": "2026-06-08T02:00",
+    "temperature_2m": 22.4,
+    "precipitation": 0.0,
+    "conditions": "good"
+  },
+  {
+    "time": "2026-06-08T03:00",
+    "temperature_2m": 21.8,
+    "precipitation": 0.0,
+    "conditions": "good"
+  },
+  {
+    "time": "2026-06-08T04:00",
+    "temperature_2m": 21.3,
+    "precipitation": 0.0,
+    "conditions": "good"
+  },
+  {
+    "time": "2026-06-08T05:00",
+    "temperature_2m": 20.7,
+    "precipitation": 0.0,
+    "conditions": "good"
+  },
+  {
+    "time": "2026-06-08T06:00",
+    "temperature_2m": 20.3,
+    "precipitation": 0.0,
+    "conditions": "good"
+  },
+  {
+    "time": "2026-06-08T07:00",
+    "temperature_2m": 19.9,
+    "precipitation": 0.0,
+    "conditions": "good"
+  },
+  {
+    "time": "2026-06-08T08:00",
+    "temperature_2m": 19.6,
+    "precipitation": 0.0,
+    "conditions": "good"
+  },
+  {
+    "time": "2026-06-08T09:00",
+    "temperature_2m": 19.3,
+    "precipitation": 0.0,
+    "conditions": "good"
+  }
+]

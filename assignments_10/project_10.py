@@ -37,8 +37,12 @@ blob_path = f"raw/{today}/weather.json"
 credential = DefaultAzureCredential()
 container = ContainerClient(ACCOUNT_URL, CONTAINER, credential=credential)
 
-raw = container.download_blob(blob_path).readall()
-data = json.loads(raw.decode("utf-8"))
+try: 
+    raw = container.download_blob(blob_path).readall()
+    data = json.loads(raw.decode("utf-8"))
+except Exception:
+    with open("assignments/resources/weather_raw.json", "r") as f:
+        data = json.load(f)
 
 # Reshape 
 hourly = data["hourly"]

@@ -63,12 +63,12 @@ which is important for privacy and compliance requirenments.
 """
 1. azure_endpoint:
     The URL of the Azure OpenAI resource where requests are sent.
-2. api_key: 
-    The Azure OpenAi key used for authentication and access control.
-3. api_version: 
+2. api_version: 
     The version of the Azure OpenAI being used.
     It ensures compatibility between the application and the Azure service.
-
+3. deployment_name: 
+    The name of the model deployment created in Azure OpenAI.
+    It identifies which deployed model should be used for requests.
 """
 
 # Q3
